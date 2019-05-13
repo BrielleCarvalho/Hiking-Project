@@ -61,4 +61,24 @@ router.get("/get-conditions-by-id", (req, res) => {
 });
 
 
+
+router.get("/get-to-dos", (req, res) => {
+
+        console.log("in get todos");
+
+        // https://www.hikingproject.com/data/get-to-dos?email=alithom123@gmail.com&key=200466516-8529d615652675afe116280247200513
+        axios.get(`${apiBaseUrl}/data/get-to-dos?email=alithom123@gmail.com&key=200466516-8529d615652675afe116280247200513`)
+            .then(response => {
+                // console.log("response ", response);
+                console.log("success");
+                res.json(response.data);
+            })
+            .catch(err => {
+                // console.log("error");
+                console.log("err ", err);
+                // res.json(err);
+            });
+});
+
+
 module.exports = router;
