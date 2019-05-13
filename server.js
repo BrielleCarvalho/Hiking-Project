@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const tests = require("./routes/api/tests");
 
 
 const app = express();
@@ -36,6 +37,7 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use( "/api/tests", tests);
 
 // Setup port to 5000 unless deployed to Heroku then use its port.
 const port = process.env.PORT || 5000;
