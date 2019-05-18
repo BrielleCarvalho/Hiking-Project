@@ -33,7 +33,7 @@ module.exports = function validateRegisterInput(data) {
     }
 
     if (Validator.isEmpty(data.password2)) {
-        error.password2 = "Confirm password required";
+        errors.password2 = "Confirm password required";
     }
 
     if (!Validator.isLength(data.password, {
