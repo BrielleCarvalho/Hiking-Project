@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 
 class Login extends Component {
     constructor() {
@@ -13,13 +14,21 @@ class Login extends Component {
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value });
     };
-    onSubmit = e => {
+    onSubmit = async e => {
         e.preventDefault();
         const userData = {
             email: this.state.email,
             password: this.state.password
         };
-        console.log(userData);
+
+        try {
+            const response = await axios.post('/api/users/login', userData);
+            console.log(':point_right: Returned data:', response);
+        } catch (e) {
+            console.log(`😱 Axios request failed: ${e}`);
+        }
+
+
     };
     render() {
         const { errors } = this.state;
