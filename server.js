@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const passport = require("passport");
 
 const users = require("./routes/api/users");
+const hikes = require("./routes/api/hikes");
 const tests = require("./routes/api/tests");
 
 
@@ -37,10 +38,11 @@ require("./config/passport")(passport);
 
 // Routes
 app.use("/api/users", users);
+app.use("/api/hikes", hikes);
 app.use( "/api/tests", tests);
 
 // Open up public folder to serve images
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 // Setup port to 5000 unless deployed to Heroku then use its port.
 const port = process.env.PORT || 5000;

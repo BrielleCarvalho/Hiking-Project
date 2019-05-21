@@ -1,6 +1,59 @@
 import React, {Component} from "react";
+import axios from "axios";
 
 class Hikes extends Component {
+
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { hikes: {} };
+        console.log(`state = %o`, this.state);
+        // this.handleClick = this.handleClick.bind(this);
+    }
+
+    async componentWillMount() {
+        // let mode;
+        // if (this.props.age > 70) {
+        //     mode = 'old';
+        // } else if (this.props.age < 18) {
+        //     mode = 'young';
+        // } else {
+        //     mode = 'middle';
+        // }
+        // onSubmit = async e => {
+        //     e.preventDefault();
+        //     const userData = {
+        //         email: this.state.email,
+        //         password: this.state.password
+        //     };
+
+            try {
+                let response = await axios.get('/api/hikes/all');
+                this.setState({ hikes: response.hikes });
+
+
+                // const hikes =  response.hikes;
+                // response.hikes.map(hike => {
+                //     return (
+                //         <div>
+                //             <h2>Hike</h2>
+                //         </div>
+                //     )
+                // })
+
+
+                console.log(':point_right: Returned data:', response);
+            } catch (e) {
+                console.log(`😱 Axios request failed: ${e}`);
+            }
+
+
+        // };
+        //
+
+    }
+
+
     render() {
         return (
             <div style={{height: "75vh"}} className="container valign-wrapper">
@@ -17,6 +70,13 @@ class Hikes extends Component {
                         {/*</p>*/}
                         {/*<br/>*/}
 
+                        {
+                            ["a","b","c"].map( (hike, i) => {
+                                return  (
+                                <p>Another hike</p>
+                                );
+                            })
+                        }
                         <div className="card">
                             <div className="card-image waves-effect waves-block waves-light">
                                 <img className="activator" src="hikeImages/hike1.jpeg"/>
