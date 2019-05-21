@@ -39,6 +39,9 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use( "/api/tests", tests);
 
+// Open up public folder to serve images
+app.use(express.static('public'))
+
 // Setup port to 5000 unless deployed to Heroku then use its port.
 const port = process.env.PORT || 5000;
 
