@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import { generateKeyPair } from "crypto";
 
 class Register extends Component {
     constructor() {
@@ -49,10 +50,10 @@ class Register extends Component {
                         </Link>
                         <div className="col s12" style={{paddingLeft: "11.250px"}}>
                             <h4>
-                                <b>Register</b> below
+                                <b>Sign Up</b>
                             </h4>
                             <p className="grey-text text-darken-1">
-                                Already have an account? <Link to="/login">Log in</Link>
+                                Already have an account? <Link className="darkslategray-text" to="/login">Log In</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
@@ -102,10 +103,11 @@ class Register extends Component {
                                         width: "150px",
                                         borderRadius: "3px",
                                         letterSpacing: "1.5px",
-                                        marginTop: "1rem"
+                                        marginTop: "1rem",
+                                        backgroundColor: "tan"
                                     }}
                                     type="submit"
-                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                                    className="btn btn-large waves-effect waves-light hoverable"
                                 >
                                     Sign up
                                 </button>
