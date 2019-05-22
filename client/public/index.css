@@ -6,3 +6,7 @@ body{
     color: #244441;
 };
 
+.alignLeft{
+    text-align: start;
+}
+
