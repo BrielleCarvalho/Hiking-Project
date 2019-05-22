@@ -10,23 +10,20 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 
 
-
-
 function App() {
   return (
     <div className="App">
-      <h2>TEstasdf</h2>
-        
         <Router>
             <div className="App">
                 <Navbar />
-                <Route exact path="/" component={Landing} />
                 <Route exact path="/register" component={Register} />
                 <Route exact path="/login" component={Login} />
                 <Route exact path="/hikes" component={Hikes} />
             </div>
         </Router>
 
+
+        <Landing></Landing>
 
 
       <Form></Form>

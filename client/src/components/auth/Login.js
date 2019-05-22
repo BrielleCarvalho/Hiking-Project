@@ -42,10 +42,10 @@ class Login extends Component {
                         </Link>
                         <div className="col s12" style={{ paddingLeft: "11.250px" }}>
                             <h4>
-                                <b>Login</b> below
+                                <b>Log In</b>
                             </h4>
                             <p className="grey-text text-darken-1">
-                                Don't have an account? <Link to="/register">Register</Link>
+                                Don't have an account? <Link className="darkslategray-text" to="/register">Sign Up!</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
@@ -75,12 +75,13 @@ class Login extends Component {
                                         width: "150px",
                                         borderRadius: "3px",
                                         letterSpacing: "1.5px",
-                                        marginTop: "1rem"
+                                        marginTop: "1rem",
+                                        backgroundColor: "sienna"
                                     }}
                                     type="submit"
-                                    className="btn btn-large waves-effect waves-light hoverable blue accent-3"
+                                    className="btn btn-large waves-effect waves-light hoverable"
                                 >
-                                    Login
+                                    Log In
                                 </button>
                             </div>
                         </form>
