@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Navbar from "./Navbar";
 
 
 class Landing extends Component {
@@ -32,41 +33,46 @@ class Landing extends Component {
 
     render() {
         return (
+           
             <div>
+
                 <div class="row">
 
                     <div class="col sm12 m9">
                         <div class="row">
 
-                            <div class="col s12 m4">
-
                             {this.state.hikes.map( (hike, i) => {
                                 console.log(hike)
                                 return  (
 
+                                <div class="col s12 m4">
+                                <div className="card small">
 
-                                <div className="card">
                                     <div className="card-image waves-effect waves-block waves-light">
                                         <img className="activator" src={hike.imgMedium}/>
                                     </div>
+
                                     <div className="card-content">
                                         <span className="card-title activator grey-text text-darken-4">{hike.name}<i
                                             className="material-icons right">more_vert</i></span>
-                                        <p><a href="#">This is a link</a></p>
+                                        <p><a target="_blank" href={hike.url}>Find out more!</a></p>
                                     </div>
+
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">{hike.name}<i
                                             className="material-icons right">close</i></span>
                                         <p>
                                             <ul>
-                                                <li class="alignLeft">Location: {hike.location}</li>
-                                                <li class="alignLeft">Difficulty: {hike.difficulty}</li>
-                                                <li class="alignLeft">Length: {hike.length}</li>
-                                                <li class="alignLeft">Ascent: {hike.ascent}</li>
-                                                <li class="alignLeft">Stars: {hike.stars}</li>
+                                                <li>Location: {hike.location}</li>
+                                                <li >Difficulty: {hike.difficulty}</li>
+                                                <li >Length: {hike.length}</li>
+                                                <li >Ascent: {hike.ascent}</li>
+                                                <li >Stars: {hike.stars}</li>
                                             </ul>
                                         </p>
                                     </div>
+
+                                </div>
                                 </div>
 
                             );
@@ -78,7 +84,7 @@ class Landing extends Component {
 
                         </div>
 
-                    </div>
+                    
 
                     <div class="col sm0 m3">
                         <div>
@@ -95,8 +101,8 @@ class Landing extends Component {
                     </div>
 
                 </div>
-
             </div>
+            // </div>
 
 
         );
