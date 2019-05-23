@@ -3,11 +3,11 @@ import axios from "axios";
 
 class Form extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            comment:"comment"
-        };
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { counter: 0 };
+        this.handleClick = this.handleClick.bind(this);
     }
 
     onSubmit = async e => {
@@ -23,8 +23,6 @@ class Form extends React.Component {
         } catch (e) {
             console.log(`😱 Axios request failed: ${e}`);
         }
-
-
     };
 
 
@@ -36,8 +34,8 @@ class Form extends React.Component {
                     Comment:
                     <br></br>
                     <input type="text" name="comment" />
+                    <input type="submit" value="Submit" />
                 </form>
-                <input type="submit" value="Submit" />
             </div>
         );
     }
