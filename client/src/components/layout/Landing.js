@@ -46,7 +46,7 @@ class Landing extends Component {
                                 return  (
 
 
-                                <div className="col s12 m4" hikeNum={i}>
+                                <div className="col s12 m4" key={i}>
                                 <div className="card small">
 
                                     <div className="card-image waves-effect waves-block waves-light">
