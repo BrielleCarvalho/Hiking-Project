@@ -45,7 +45,7 @@ class Landing extends Component {
                                 console.log(hike)
                                 return  (
 
-                                <div class="col s12 m4">
+                                <div class="col s12 m5 l4">
                                 <div className="card small">
 
                                     <div className="card-image waves-effect waves-block waves-light">
@@ -77,7 +77,7 @@ class Landing extends Component {
 
                             );
                                 }
-                            )};
+                            )}
 
                             </div>
 
@@ -86,7 +86,7 @@ class Landing extends Component {
 
                     
 
-                    <div class="col sm0 m3">
+                    <div class="col-3 sideBar left-align">
                         <div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nulla nisi, vitae interdum lacus lacinia et. Nulla facilisis quam lacinia risus accumsan congue. Integer pellentesque tincidunt eleifend. Praesent eget purus faucibus, auctor erat et, tincidunt eros. Phasellus eu tincidunt justo. Mauris ac euismod eros, ac molestie leo. Aenean orci libero, pulvinar eu tellus eu, dignissim malesuada dui. Sed at dui nec dolor convallis volutpat vel id leo. Nunc efficitur, nisl quis ultrices facilisis, nisl ligula dictum purus, eget ornare nunc eros ac nibh. Ut bibendum, tortor vitae tincidunt vulputate, ex tortor mattis eros, eget dictum ligula ligula nec orci. Vivamus rutrum, eros et cursus blandit, augue ligula imperdiet justo, nec sagittis mauris eros sit amet diam. In suscipit sagittis nisl, viverra ullamcorper metus sagittis vitae. Nam tincidunt orci sed risus aliquam molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     

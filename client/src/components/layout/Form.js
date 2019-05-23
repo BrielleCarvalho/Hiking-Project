@@ -36,8 +36,9 @@ class Form extends React.Component {
                     Comment:
                     <br></br>
                     <input type="text" name="comment" />
+                    <input type="submit" value="Submit" />
                 </form>
-                <input type="submit" value="Submit" />
+                
             </div>
         );
     }

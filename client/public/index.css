@@ -10,6 +10,56 @@ body{
     text-align: start;
 }
 
-/* .activator{
-    height: 200px;
-} */
+
+
+@media only screen and (max-width: 600px) {
+    .sideBar {
+      display: none !important; 
+    }
+    .signInUp{
+        display: none !important;
+    }
+
+    .dropdown{
+        display: inline !important;
+        align-self: left !important;
+    }
+
+}
+
+@media only screen and (max-width: 800px) {
+    .sideBar {
+        display: inline;
+      }
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+
+}
+
+@media only screen and (max-width: 1200px) {
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+    .sideBar {
+        display: inline;
+      }
+}
+
+@media only screen and (max-width: 1600px) {
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+    .sideBar {
+        display: inline;
+      }
+}

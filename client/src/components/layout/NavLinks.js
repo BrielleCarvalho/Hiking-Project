@@ -10,18 +10,18 @@ class NavLinks extends Component {
         return (
 
 
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <ul id="nav-mobile" className="left">
                 <li>
                     <a
 
                         href="register"
                         style={{
-                             width: "150px",
-                             borderRadius: "3px",
-                             letterSpacing: "1.5px",
-                             backgroundColor: "tan"
-                            }}
-                         className="btn-flat btn-large white-text hoverable waves-effect modal-trigger"
+                            width: "150px",
+                            borderRadius: "3px",
+                            letterSpacing: "1.5px",
+                            backgroundColor: "tan"
+                        }}
+                        className="btn-flat btn-large white-text hoverable waves-effect modal-trigger signInUp"
                     >
                         Sign Up
                         </a>
@@ -36,10 +36,13 @@ class NavLinks extends Component {
                             letterSpacing: "1.5px",
                             backgroundColor: "sienna"
                         }}
-                        className="btn-flat btn-large white-text hoverable waves-effect"
+                        className="btn-flat btn-large white-text hoverable waves-effect signInUp"
                     >
                         Log In
                         </a>
+                </li>
+                <li className="dropdown">
+                        <a href="login"><i className="material-icons">menu</i></a>
                 </li>
 
             </ul>
