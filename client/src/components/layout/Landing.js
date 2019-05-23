@@ -36,16 +36,17 @@ class Landing extends Component {
            
             <div>
 
-                <div class="row">
+                <div className="row">
 
-                    <div class="col sm12 m9">
-                        <div class="row">
+                    <div className="col sm12 m9">
+                        <div className="row">
 
                             {this.state.hikes.map( (hike, i) => {
                                 console.log(hike)
                                 return  (
 
-                                <div class="col s12 m4">
+
+                                <div className="col s12 m4" key={i}>
                                 <div className="card small">
 
                                     <div className="card-image waves-effect waves-block waves-light">
@@ -61,15 +62,13 @@ class Landing extends Component {
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">{hike.name}<i
                                             className="material-icons right">close</i></span>
-                                        <p>
-                                            <ul>
-                                                <li>Location: {hike.location}</li>
-                                                <li >Difficulty: {hike.difficulty}</li>
-                                                <li >Length: {hike.length}</li>
-                                                <li >Ascent: {hike.ascent}</li>
-                                                <li >Stars: {hike.stars}</li>
-                                            </ul>
-                                        </p>
+                                        <ul>
+                                            <li>Location: {hike.location}</li>
+                                            <li >Difficulty: {hike.difficulty}</li>
+                                            <li >Length: {hike.length}</li>
+                                            <li >Ascent: {hike.ascent}</li>
+                                            <li >Stars: {hike.stars}</li>
+                                        </ul>
                                     </div>
 
                                 </div>
@@ -86,7 +85,7 @@ class Landing extends Component {
 
                     
 
-                    <div class="col sm0 m3">
+                    <div className="col sm0 m3">
                         <div>
                             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nulla nisi, vitae interdum lacus lacinia et. Nulla facilisis quam lacinia risus accumsan congue. Integer pellentesque tincidunt eleifend. Praesent eget purus faucibus, auctor erat et, tincidunt eros. Phasellus eu tincidunt justo. Mauris ac euismod eros, ac molestie leo. Aenean orci libero, pulvinar eu tellus eu, dignissim malesuada dui. Sed at dui nec dolor convallis volutpat vel id leo. Nunc efficitur, nisl quis ultrices facilisis, nisl ligula dictum purus, eget ornare nunc eros ac nibh. Ut bibendum, tortor vitae tincidunt vulputate, ex tortor mattis eros, eget dictum ligula ligula nec orci. Vivamus rutrum, eros et cursus blandit, augue ligula imperdiet justo, nec sagittis mauris eros sit amet diam. In suscipit sagittis nisl, viverra ullamcorper metus sagittis vitae. Nam tincidunt orci sed risus aliquam molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     

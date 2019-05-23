@@ -10,7 +10,7 @@ class NavLinks extends Component {
         return (
 
 
-            <ul id="nav-mobile" class="left hide-on-med-and-down">
+            <ul id="nav-mobile" className="left hide-on-med-and-down">
                 <li>
                     <a
 

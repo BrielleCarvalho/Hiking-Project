@@ -6,6 +6,7 @@ const passport = require("passport");
 const users = require("./routes/api/users");
 const hikes = require("./routes/api/hikes");
 const tests = require("./routes/api/tests");
+const images = require("./routes/api/images");
 
 
 const app = express();
@@ -40,6 +41,7 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use("/api/hikes", hikes);
 app.use( "/api/tests", tests);
+app.use( "/api/images", images);
 
 // Open up public folder to serve images
 app.use(express.static('public'));

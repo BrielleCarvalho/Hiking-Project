@@ -60,5 +60,12 @@ router.get("/all", (req, res) => {
 });
 
 
+router.get("/comment", (req, res) => {
+
+        return res.json(trails);
+});
+
+
+
 
 module.exports = router;

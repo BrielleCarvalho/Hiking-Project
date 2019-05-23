@@ -5,10 +5,10 @@ import NavLinks from "./NavLinks";
 class Navbar extends React.Component {
     render() {
         return (
-            <div class="navbar-fixed">
+            <div className="navbar-fixed">
             <nav>
-              <div class="nav-wrapper darkslategray">
-                <a href="localhost:3000" class="brand-logo right linen-text">Trail Guide</a>
+              <div className="nav-wrapper darkslategray">
+                <a href="localhost:3000" className="brand-logo right linen-text">Trail Guide</a>
                 <div> <NavLinks /></div>
               </div>
             </nav>
