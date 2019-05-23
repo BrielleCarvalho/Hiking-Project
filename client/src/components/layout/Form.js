@@ -36,6 +36,17 @@ class Form extends React.Component {
                     <input type="text" name="comment" />
                     <input type="submit" value="Submit" />
                 </form>
+
+                <h2>Image</h2>
+
+                <form action="/api/images/upload" method="POST" type="multipart/form-data">
+                    <div className="custom-file mb-3">
+                        <input type="file" name="file" id="file" className="custom-file-input"/>
+                            <label htmlFor="file" className="custom-file-label">Choose File</label>
+                    </div>
+                    <input type="submit" value="Submit" className="btn btn-primary btn-block"/>
+                </form>
+
             </div>
         );
     }
