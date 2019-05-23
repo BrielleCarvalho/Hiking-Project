@@ -6,3 +6,10 @@ body{
     color: #244441;
 };
 
+.alignLeft{
+    text-align: start;
+}
+
+/* .activator{
+    height: 200px;
+} */

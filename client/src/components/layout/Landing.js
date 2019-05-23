@@ -1,62 +1,90 @@
 import React, { Component } from "react";
+import axios from "axios";
+import Navbar from "./Navbar";
 
 
 class Landing extends Component {
+
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { hikes: [], test: [1,2,3] };
+        console.log(`state = %o`, this.state);
+        // this.handleClick = this.handleClick.bind(this);
+    }
+
+    async componentDidMount() {
+
+
+            try {
+                let response = await axios.get('/api/hikes/all');
+                this.setState({ hikes: response.data.hikes });
+                console.log(`API RESULT state.hikes = %o`, response.data.hikes);
+
+
+                console.log('API :point_right: Returned data:', response.data.hikes);
+            } catch (e) {
+                console.log(`😱 Axios request failed: ${e}`);
+            }
+
+
+    }
+
+
     render() {
         return (
+           
             <div>
+
                 <div class="row">
 
                     <div class="col sm12 m9">
                         <div class="row">
 
-                            <div class="col s12 m4">
+                            {this.state.hikes.map( (hike, i) => {
+                                console.log(hike)
+                                return  (
 
-                                <div class="card">
+                                <div class="col s12 m4">
+                                <div className="card small">
 
-                                    <div class="card-image">
-                                        <img src="https://s3-media3.fl.yelpcdn.com/bphoto/C7yinPdiF089Gpr5LapHHw/348s.jpg" />
-                                        <span class="card-title">Card Title</span>
+                                    <div className="card-image waves-effect waves-block waves-light">
+                                        <img className="activator" src={hike.imgMedium}/>
                                     </div>
 
-                                    <div class="card-content">
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                        I am convenient because I require little markup to use effectively.</p>
+                                    <div className="card-content">
+                                        <span className="card-title activator grey-text text-darken-4">{hike.name}<i
+                                            className="material-icons right">more_vert</i></span>
+                                        <p><a target="_blank" href={hike.url}>Find out more!</a></p>
                                     </div>
 
-                                    <div class="card-action">
-                                        <a href="google.com">This is a link</a>
-                                    </div>
-
-                                </div>
-
-                            </div>
-
-                            <div class="col s12 m4">
-
-                                <div class="card">
-
-                                    <div class="card-image">
-                                        <img src="https://s3-media3.fl.yelpcdn.com/bphoto/C7yinPdiF089Gpr5LapHHw/348s.jpg" />
-                                        <span class="card-title">Card Title</span>
-                                    </div>
-
-                                    <div class="card-content">
-                                        <p>I am a very simple card. I am good at containing small bits of information.
-                                        I am convenient because I require little markup to use effectively.</p>
-                                    </div>
-
-                                    <div class="card-action">
-                                        <a href="google.com">This is a link</a>
+                                    <div className="card-reveal">
+                                        <span className="card-title grey-text text-darken-4">{hike.name}<i
+                                            className="material-icons right">close</i></span>
+                                        <p>
+                                            <ul>
+                                                <li>Location: {hike.location}</li>
+                                                <li >Difficulty: {hike.difficulty}</li>
+                                                <li >Length: {hike.length}</li>
+                                                <li >Ascent: {hike.ascent}</li>
+                                                <li >Stars: {hike.stars}</li>
+                                            </ul>
+                                        </p>
                                     </div>
 
                                 </div>
+                                </div>
+
+                            );
+                                }
+                            )};
 
                             </div>
+
 
                         </div>
 
-                    </div>
+                    
 
                     <div class="col sm0 m3">
                         <div>
@@ -73,8 +101,8 @@ class Landing extends Component {
                     </div>
 
                 </div>
-
             </div>
+            // </div>
 
 
         );
@@ -82,3 +110,28 @@ class Landing extends Component {
 }
 
 export default Landing;
+
+
+// ascent: 2541
+// conditionDate: "2019-04-25 09:12:13"
+// conditionDetails: "Mostly Dry, Some Mud - Only a couple spots with snow, but easily avoidable."
+// conditionStatus: "All Clear"
+// descent: -2540
+// difficulty: "blueBlack"
+// high: 8342
+// id: 7000130
+// imgMedium: "https://cdn-files.apstatic.com/hike/7005382_medium_1554312030.jpg"
+// imgSmall: "https://cdn-files.apstatic.com/hike/7005382_small_1554312030.jpg"
+// imgSmallMed: "https://cdn-files.apstatic.com/hike/7005382_smallMed_1554312030.jpg"
+// imgSqSmall: "https://cdn-files.apstatic.com/hike/7005382_sqsmall_1554312030.jpg"
+// latitude: 39.9787
+// length: 5.7
+// location: "Boulder, Colorado"
+// longitude: -105.2755
+// low: 6103
+// name: "Bear Peak Out and Back"
+// starVotes: 86
+// stars: 4.6
+// summary: "A must-do hike for Boulder locals and visitors alike!"
+// type: "Featured Hike"
+// url: "https://www.hikingproject.com/trail/7000130/bear-peak-out-and-back"
