@@ -62,15 +62,13 @@ class Landing extends Component {
                                     <div className="card-reveal">
                                         <span className="card-title grey-text text-darken-4">{hike.name}<i
                                             className="material-icons right">close</i></span>
-                                        <p>
-                                            <ul>
-                                                <li>Location: {hike.location}</li>
-                                                <li >Difficulty: {hike.difficulty}</li>
-                                                <li >Length: {hike.length}</li>
-                                                <li >Ascent: {hike.ascent}</li>
-                                                <li >Stars: {hike.stars}</li>
-                                            </ul>
-                                        </p>
+                                        <ul>
+                                            <li>Location: {hike.location}</li>
+                                            <li >Difficulty: {hike.difficulty}</li>
+                                            <li >Length: {hike.length}</li>
+                                            <li >Ascent: {hike.ascent}</li>
+                                            <li >Stars: {hike.stars}</li>
+                                        </ul>
                                     </div>
 
                                 </div>
