@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import { generateKeyPair } from "crypto";
+// import { generateKeyPair } from "crypto";
 
 class Register extends Component {
     constructor() {

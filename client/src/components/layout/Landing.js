@@ -70,11 +70,12 @@ class Landing extends Component {
                     <div className="col sm12 m8">
                         <div className="row">
 
+
                             {this.state.hikes.map((hike, i) => {
-                                console.log(hike)
+                                // console.log(hike)
                                 return (
 
-                                    <div className="col s12 m5 l4">
+                                    <div key={hike.id} className="col s12 m5 l4">
                                         <div className="card small">
 
                                             <div className="card-image waves-effect waves-block waves-light">
@@ -83,14 +84,14 @@ class Landing extends Component {
 
                                             <div className="card-content">
                                                 <span className="card-title activator grey-text text-darken-4">{hike.name} <br></br>
-                                                    <i className="material-icons">more_vert</i></span>
-                                                <p><a target="_blank" href={hike.url}>Find out more!</a></p>
+                                                   <i className="material-icons">more_vert</i></span>
+
                                             </div>
 
                                             <div className="card-reveal">
-                                                <span className="card-title grey-text text-darken-4">{hike.name}<i
-                                                    className="material-icons right">close</i></span>
-                                                <p>
+                                                <span className="card-title grey-text text-darken-4">{hike.name}
+                                                <i className="material-icons right">close</i></span>
+                                                <div>
                                                     <ul>
                                                         <li>Location: {hike.location}</li>
                                                         <li >Difficulty: {hike.difficulty}</li>
@@ -98,8 +99,9 @@ class Landing extends Component {
                                                         <li >Ascent: {hike.ascent}</li>
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
-                                                    <p><a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a></p>
-                                                </p>
+                                                    <br></br>
+                                                    <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
+                                                </div>
                                             </div>
 
                                         </div>

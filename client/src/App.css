@@ -45,10 +45,6 @@
       display: inline !important;
       align-self: left !important;
   }
-  /* .pageTopper{
-      background-size: cover;
-      height: 100px;
-  } */
   .title-one{
     font-size: 40px !important;
     width: 200px;
@@ -71,9 +67,6 @@
   .signInUp{
       display: inline;
   }
-  /* .pageTopper{
-      background-size: cover;
-  } */
   .title-one{
     font-size: 50px;
 }
