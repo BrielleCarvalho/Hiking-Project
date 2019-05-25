@@ -1,5 +1,5 @@
-/* body{
-    background-color: linen;
+body{
+    background-color: #f7f9fa;
 };
 
 .darkslategray-text{
@@ -35,12 +35,12 @@
     padding: 0px;
 };
   
-/* .page-title{
+.page-title{
       margin: 0px;
       padding:0px;
       color: white;
       font-size: 500px;
-;} */
+;}
 
 
 
@@ -123,4 +123,4 @@
     .sideBar {
         display: inline;
       }
-} */
+}
