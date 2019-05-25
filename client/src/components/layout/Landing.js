@@ -75,7 +75,7 @@ class Landing extends Component {
                                 // console.log(hike)
                                 return (
 
-                                    <div key={hike.id} className="col s12 m5 l4">
+                                    <div key={i} className="col s12 m5 l4">
                                         <div className="card small">
 
                                             <div className="card-image waves-effect waves-block waves-light">
@@ -83,8 +83,8 @@ class Landing extends Component {
                                             </div>
 
                                             <div className="card-content">
-                                                <span className="card-title activator grey-text text-darken-4">{hike.name} <br></br>
-                                                   <i className="material-icons">more_vert</i></span>
+                                                <span className="card-title activator grey-text text-darken-4">{hike.name}
+                                                   <i className="material-icons right">more_vert</i></span>
 
                                             </div>
 
