@@ -45,10 +45,19 @@
       display: inline !important;
       align-self: left !important;
   }
-  .pageTopper{
+  /* .pageTopper{
       background-size: cover;
       height: 100px;
-  }
+  } */
+  .title-one{
+    font-size: 40px !important;
+    width: 200px;
+}
+.title-two{
+    font-size: 25px !important;
+    padding: 5px 0px 0px 0px;
+
+}
 
 }
 
@@ -62,20 +71,15 @@
   .signInUp{
       display: inline;
   }
-  .pageTopper{
+  /* .pageTopper{
       background-size: cover;
-      height: 200px;
-      background-color: #244441;
-      background-image: null;
-  }
+  } */
   .title-one{
-      font-size: 35px;
-      align-self: left;
-  }
-  .title-two{
-      font-size: 20px;
-      align-self: left;
-  }
+    font-size: 50px;
+}
+.title-two{
+    font-size: 35px;
+}
 }
 
 @media only screen and (max-width: 1200px) {
@@ -91,12 +95,6 @@
   .pageTopper{
       height: 300px;
       background-color: #244441;
-  }
-  .title-one{
-      font-size: 50px;
-  }
-  .title-two{
-      font-size: 35px;
   }
 }
 

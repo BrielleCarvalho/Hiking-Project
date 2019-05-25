@@ -41,7 +41,7 @@ class Landing extends Component {
                         height: "400px",
                         backgroundImage: 'url("/images/Hamilton-Pool-front.jpg")',
                         backgroundRepeat: "no-repeat",
-                        backgroundSize: "100%",
+                        backgroundSize: "cover",
                         position: "relative",
                         margin: "0px",
                         padding: "0px"
@@ -84,7 +84,7 @@ class Landing extends Component {
                                             <div className="card-content">
                                                 <span className="card-title activator grey-text text-darken-4">{hike.name} <br></br>
                                                     <i className="material-icons">more_vert</i></span>
-                                                {/* <p><a target="_blank" href={hike.url}>Find out more!</a></p> */}
+                                                <p><a target="_blank" href={hike.url}>Find out more!</a></p>
                                             </div>
 
                                             <div className="card-reveal">
