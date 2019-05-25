@@ -47,14 +47,16 @@ class Landing extends Component {
                     }}>
 
                     <h2 className="center-align title-one" 
-                        style={{ position: "absolute", 
+                        style={{
+                            position: "absolute", 
                             top: "120px", 
                             left: "28%", 
                             right: "28%", 
                             color: "white" 
                         }}>Trail Guide <br /></h2>
                     <h4 className="center-align title-two" 
-                        style={{ position: "absolute", 
+                        style={{ 
+                            position: "absolute", 
                             top: "200px", 
                             left: "28%", 
                             right: "28%", 
@@ -82,8 +84,9 @@ class Landing extends Component {
                                             </div>
 
                                             <div className="card-content">
-                                                <span className="card-title activator grey-text text-darken-4"> {hike.name}<i className="material-icons right">more_vert</i></span>
-                                                   <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
+                                                <span className="card-title activator grey-text text-darken-4"> {hike.name}<br></br>
+                                                <i className="material-icons">more_vert</i></span>
+                                                   
 
                                             </div>
 
@@ -99,6 +102,7 @@ class Landing extends Component {
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
                                                     <br></br>
+                                                    <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
                                                 </div>
                                             </div>
 
