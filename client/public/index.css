@@ -1,15 +1,126 @@
-body{
+/* body{
     background-color: linen;
-}
+};
 
 .darkslategray-text{
     color: #244441;
 };
 
-.alignLeft{
-    text-align: start;
+.sienna {
+    background-color: #b55139;
+};
+
+.tan {
+    background-color: #d3a08d;
+};
+
+.nav-wrapper {
+    background-color: white;
+};
+
+.gray {
+    background-color: #86897e;
+};
+
+.peru {
+    background-color: #bc9336;
+};
+
+.pageTopper {
+    height: 800px;
+    background-image: url("/images/Hamilton-Pool-front.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    margin: 0px;
+    padding: 0px;
+};
+  
+/* .page-title{
+      margin: 0px;
+      padding:0px;
+      color: white;
+      font-size: 500px;
+;} */
+
+
+
+
+
+@media only screen and (max-width: 600px) {
+    .sideBar {
+      display: none !important; 
+    }
+    .signInUp{
+        display: none !important;
+    }
+
+    .dropdown{
+        display: inline !important;
+        align-self: left !important;
+    }
+    .pageTopper{
+        background-size: cover;
+        height: 100px;
+    }
+
 }
 
-/* .activator{
-    height: 200px;
+@media only screen and (max-width: 800px) {
+    .sideBar {
+        display: inline;
+      }
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+    .pageTopper{
+        background-size: cover;
+        height: 200px;
+        background-color: #244441;
+        background-image: null;
+    }
+    .title-one{
+        font-size: 35px;
+        align-self: left;
+    }
+    .title-two{
+        font-size: 20px;
+        align-self: left;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+    .sideBar {
+        display: inline;
+      }
+    .pageTopper{
+        height: 300px;
+        background-color: #244441;
+    }
+    .title-one{
+        font-size: 50px;
+    }
+    .title-two{
+        font-size: 35px;
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .dropdown{
+        display: none;
+    }
+    .signInUp{
+        display: inline;
+    }
+    .sideBar {
+        display: inline;
+      }
 } */

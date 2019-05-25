@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import {Link} from "react-router-dom";
 import axios from "axios";
-import { generateKeyPair } from "crypto";
+// import { generateKeyPair } from "crypto";
 
 class Register extends Component {
     constructor() {
@@ -53,7 +53,7 @@ class Register extends Component {
                                 <b>Sign Up</b>
                             </h4>
                             <p className="grey-text text-darken-1">
-                                Already have an account? <Link className="darkslategray-text" to="/login">Log In</Link>
+                                Already have an account? <Link style={{color: "#244441"}} to="/login">Log In</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
