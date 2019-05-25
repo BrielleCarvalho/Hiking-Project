@@ -16,12 +16,13 @@ class Landing extends Component {
 
 
         try {
-            let response = await axios.get('/api/hikes/all');
-            this.setState({ hikes: response.data.hikes });
-            console.log(`API RESULT state.hikes = %o`, response.data.hikes);
+            // let response = await axios.get('/api/hikes/all'); /* This only uses hardcoded test data */
+            let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+            this.setState({ hikes: response.data });
+            console.log(`API RESULT state.hikes = %o`, response.data);
 
 
-            console.log('API :point_right: Returned data:', response.data.hikes);
+            console.log('API :point_right: Returned data:', response.data);
         } catch (e) {
             console.log(`😱 Axios request failed: ${e}`);
         }
