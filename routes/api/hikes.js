@@ -13,6 +13,7 @@ const trails = require("../../config/seedTrails");
 // Load User model
 // const User = require("../../models/User");
 
+
 // Load Hikes model
 const Hike = require("../../models/Hike");
 
@@ -77,6 +78,23 @@ router.post("/comment", (req, res) => {
         Hike.findOneAndUpdate({_id: req.body.hikeId}, {$push: {comments: { "text": req.body.comment}}})
             .then(hike => res.json(hike))
             .catch(err => console.log(`Error in post comment api call: %o`, err));
+});
+
+router.post("/create-demo-data", (req, res) => {
+
+   const hikes = req.body;
+
+   hikes.forEach( hike => {
+        let newHike = new Hike({
+           ...hike
+        });
+
+        newHike
+        .save()
+        .then(savedHike => res.json(savedHike))
+        .catch(err => console.log(`Error in post hike api call: %o`, err));
+   })
+
 });
 
 router.get("/all", (req, res) => {
