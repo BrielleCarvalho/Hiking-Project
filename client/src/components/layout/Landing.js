@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-// import hikes from "../../../../routes/api/hikes";
 
 
 class Landing extends Component {
@@ -49,21 +48,21 @@ class Landing extends Component {
 
                     <h2 className="center-align title-one" 
                         style={{ position: "absolute", 
-                        top: "120px", 
-                        left: "28%", 
-                        right: "28%", 
-                        color: "white" 
-                    }}>Trail Guide <br /></h2>
+                            top: "120px", 
+                            left: "28%", 
+                            right: "28%", 
+                            color: "white" 
+                        }}>Trail Guide <br /></h2>
                     <h4 className="center-align title-two" 
-                    style={{ position: "absolute", 
-                        top: "200px", 
-                        left: "28%", 
-                        right: "28%", 
-                        color: "white" 
-                    }}>Guiding you to the best trails in Austin</h4>
+                        style={{ position: "absolute", 
+                            top: "200px", 
+                            left: "28%", 
+                            right: "28%", 
+                            color: "white" 
+                        }}>Guiding you to the best trails in Austin</h4>
 
                 </div>
-                <div style={{ backgroundColor: "#86897e", height: "10px", width:"100%" }}></div>
+                    <div style={{ backgroundColor: "#86897e", height: "10px", width:"100%" }}></div>
                 <div className="row" style={{ backgroundColor: "#bc9336", padding: "5px" }}>
 
 
@@ -75,7 +74,7 @@ class Landing extends Component {
                                 // console.log(hike)
                                 return (
 
-                                    <div key={i} className="col s12 m5 l4">
+                                    <div key={hike.id} className="col s12 m5 l4">
                                         <div className="card small">
 
                                             <div className="card-image waves-effect waves-block waves-light">
@@ -83,8 +82,8 @@ class Landing extends Component {
                                             </div>
 
                                             <div className="card-content">
-                                                <span className="card-title activator grey-text text-darken-4">{hike.name}
-                                                   <i className="material-icons right">more_vert</i></span>
+                                                <span className="card-title activator grey-text text-darken-4"> {hike.name}<i className="material-icons right">more_vert</i></span>
+                                                   <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
 
                                             </div>
 
@@ -100,7 +99,6 @@ class Landing extends Component {
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
                                                     <br></br>
-                                                    <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
                                                 </div>
                                             </div>
 
@@ -134,7 +132,7 @@ class Landing extends Component {
 
                 </div>
             </div>
-            // </div>
+
 
 
         );
