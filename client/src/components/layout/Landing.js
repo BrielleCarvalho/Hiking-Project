@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+// import hikes from "../../../../routes/api/hikes";
 
 
 class Landing extends Component {
@@ -46,8 +47,20 @@ class Landing extends Component {
                         padding: "0px"
                     }}>
 
-                    <h2 className="center-align title-one" style={{ position: "absolute", top: "120px", left: "28%", right: "28%", color: "white" }}>Trail Guide <br /></h2>
-                    <h4 className="center-align title-two" style={{ position: "absolute", top: "200px", left: "28%", right: "28%", color: "white" }}>Guiding you to the best trails in Austin</h4>
+                    <h2 className="center-align title-one" 
+                        style={{ position: "absolute", 
+                        top: "120px", 
+                        left: "28%", 
+                        right: "28%", 
+                        color: "white" 
+                    }}>Trail Guide <br /></h2>
+                    <h4 className="center-align title-two" 
+                    style={{ position: "absolute", 
+                        top: "200px", 
+                        left: "28%", 
+                        right: "28%", 
+                        color: "white" 
+                    }}>Guiding you to the best trails in Austin</h4>
 
                 </div>
                 <div style={{ backgroundColor: "#86897e", height: "10px", width:"100%" }}></div>
@@ -65,7 +78,7 @@ class Landing extends Component {
                                         <div className="card small">
 
                                             <div className="card-image waves-effect waves-block waves-light">
-                                                <img className="activator" src={hike.imgMedium} />
+                                                <img className="activator" src={hike.imgMedium} alt=""/>
                                             </div>
 
                                             <div className="card-content">
@@ -85,7 +98,7 @@ class Landing extends Component {
                                                         <li >Ascent: {hike.ascent}</li>
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
-                                                    <p><a target="_blank" href={hike.url}>Find out more!</a></p>
+                                                    <p><a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a></p>
                                                 </p>
                                             </div>
 

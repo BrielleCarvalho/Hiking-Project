@@ -8,7 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "seed": "node scripts/seedDB.js",
+    "seed": "node config/seedTrails.js",
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
@@ -22,9 +22,13 @@
     "body-parser": "^1.19.0",
     "concurrently": "^4.1.0",
     "express": "^4.16.4",
+    "gridfs-stream": "^1.1.1",
     "is-empty": "^1.2.0",
     "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
     "mongoose": "^5.5.7",
+    "multer": "^1.4.1",
+    "multer-gridfs-storage": "^3.2.3",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "validator": "^10.11.0"

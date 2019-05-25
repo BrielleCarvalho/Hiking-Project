@@ -3,11 +3,11 @@ import axios from "axios";
 
 class Form extends React.Component {
 
-    constructor() {
-        super();
-        this.state = {
-            comment:"comment"
-        };
+    constructor(props) {
+        super(props);
+        // Don't call this.setState() here!
+        this.state = { comment: "testComment" };
+        // this.handleClick = this.handleClick.bind(this);
     }
 
     onSubmit = async e => {
@@ -23,8 +23,6 @@ class Form extends React.Component {
         } catch (e) {
             console.log(`😱 Axios request failed: ${e}`);
         }
-
-
     };
 
 
@@ -38,7 +36,16 @@ class Form extends React.Component {
                     <input type="text" name="comment" />
                     <input type="submit" value="Submit" />
                 </form>
-                
+
+                <h2>Image</h2>
+
+                <form action="/api/images/upload" method="POST" encType="multipart/form-data">
+                    <div className="custom-file mb-3">
+                        <input type="file" name="file" id="file" className="custom-file-input"/>
+                        <label htmlFor="file" className="custom-file-label">Choose File</label>
+                    </div>
+                    <input type="submit" value="Submit" className="btn btn-primary btn-block"/>
+                </form>
             </div>
         );
     }
