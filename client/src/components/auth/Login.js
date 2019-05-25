@@ -45,7 +45,7 @@ class Login extends Component {
                                 <b>Log In</b>
                             </h4>
                             <p className="grey-text text-darken-1">
-                                Don't have an account? <Link className="darkslategray-text" to="/register">Sign Up!</Link>
+                                Don't have an account? <Link style={{color: "#244441"}} to="/register">Sign Up!</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>

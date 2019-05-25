@@ -10,7 +10,7 @@ class NavLinks extends Component {
         return (
 
 
-            <ul id="nav-mobile" className="left">
+            <ul id="nav-mobile" className="align-center">
                 <li>
                     <a
 
@@ -21,7 +21,7 @@ class NavLinks extends Component {
                             letterSpacing: "1.5px",
                             backgroundColor: "tan"
                         }}
-                        className="btn-flat btn-large white-text hoverable waves-effect modal-trigger signInUp"
+                        className="btn-flat btn-large white-text hoverable waves-effect modal-trigger signInUp left"
                     >
                         Sign Up
                         </a>
@@ -36,7 +36,7 @@ class NavLinks extends Component {
                             letterSpacing: "1.5px",
                             backgroundColor: "sienna"
                         }}
-                        className="btn-flat btn-large white-text hoverable waves-effect signInUp"
+                        className="btn-flat btn-large white-text hoverable waves-effect signInUp left"
                     >
                         Log In
                         </a>
