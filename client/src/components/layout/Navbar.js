@@ -7,9 +7,9 @@ class Navbar extends React.Component {
         return (
             <div className="navbar-fixed">
             <nav>
-              <div className="nav-wrapper darkslategray">
-                <a href="localhost:3000" className="brand-logo right linen-text">Trail Guide</a>
-                <div> <NavLinks /></div>
+              <div className="nav-wrapper darkslategray" style={{backgroundColor: "#244441"}}>
+                <a href="localhost:3000" className="brand-logo right linen-text"><i className="material-icons">filter_hdr</i>Trail Guide</a>
+                <div style={{padding: "6px"}}> <NavLinks /></div>
               </div>
             </nav>
           </div>

@@ -31,3 +31,74 @@
     transform: rotate(360deg);
   }
 }
+
+
+@media only screen and (max-width: 600px) {
+  .sideBar {
+    display: none !important; 
+  }
+  .signInUp{
+      display: none !important;
+  }
+
+  .dropdown{
+      display: inline !important;
+      align-self: left !important;
+  }
+  .title-one{
+    font-size: 40px !important;
+    width: 200px;
+}
+.title-two{
+    font-size: 25px !important;
+    padding: 5px 0px 0px 0px;
+
+}
+
+}
+
+@media only screen and (max-width: 800px) {
+  .sideBar {
+      display: inline;
+    }
+  .dropdown{
+      display: none;
+  }
+  .signInUp{
+      display: inline;
+  }
+  .title-one{
+    font-size: 50px;
+}
+.title-two{
+    font-size: 35px;
+}
+}
+
+@media only screen and (max-width: 1200px) {
+  .dropdown{
+      display: none;
+  }
+  .signInUp{
+      display: inline;
+  }
+  .sideBar {
+      display: inline;
+    }
+  .pageTopper{
+      height: 300px;
+      background-color: #244441;
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  .dropdown{
+      display: none;
+  }
+  .signInUp{
+      display: inline;
+  }
+  .sideBar {
+      display: inline;
+    }
+}

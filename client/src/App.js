@@ -13,20 +13,22 @@ import Login from "./components/auth/Login";
 function App() {
   return (
     <div className="App">
-        <Router>
-            <div className="App">
-                <Navbar />
-                <Route exact path="/register" component={Register} />
-                <Route exact path="/login" component={Login} />
-                <Route exact path="/hikes" component={Hikes} />
-            </div>
-        </Router>
-
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Route exact path="/register" component={Register} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/hikes" component={Hikes} />
+        </div>
 
         <Landing></Landing>
 
+        <Form></Form>
 
-      <Form></Form>
+      </Router>
+
+
+
     </div>
   );
 }
