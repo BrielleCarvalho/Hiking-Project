@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 
 
-class Hikec extends Component {
+class HikeCard extends Component {
 
     constructor(props) {
         super(props);
@@ -56,4 +56,4 @@ class Hikec extends Component {
     }
 }
 
-export default Hikec;
+export default HikeCard;

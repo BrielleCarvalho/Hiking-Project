@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import HikeComments from "./HikeComments";
+import HikeCommentForm from "./Test";
 
 
 class HikeDetail extends Component {
@@ -64,8 +65,14 @@ class HikeDetail extends Component {
     render() {
         return (
             <div>
-                <p>Hike Detail</p>
+                <h3>{this.props.hike.name}</h3>
+                <p><b>Summary:</b> {this.props.hike.summary}</p>
+                <p><b>Condition Details:</b> {this.props.hike.conditionDetails}</p>
+                <p><b>Condition Status:</b> {this.props.hike.conditionStatus}</p>
+                <p><b>Length:</b> {this.props.hike.length}</p>
+                <p><b>Ascent:</b> {this.props.hike.ascent}</p>
                 <HikeComments comments={this.props.hike.comments} />
+                <HikeCommentForm hikeId={this.props.hike._id}/>
             </div>
 
         );

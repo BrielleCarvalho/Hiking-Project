@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Hikec from "./Hikec";
+import HikeCard from "./HikeCard";
 import HikeDetail from "./HikeDetail";
 
 
@@ -16,21 +16,13 @@ class Landing extends Component {
     }
 
     renderDetails() {
-
-        // this.state.showComments = true;
-        // this.state.selectedHikeIndex = hikeIndex;
-        // this.setState( {showComments: true, showDetails: true, selectedHikeIndex: hikeIndex});
-        // return (
-        //     <HikeDetail />
-        // )
-
         console.log(`In renderDetails this.state = %o`, this.state);
 
         if(this.state.showDetails) {
 
             return (
                 <div>
-                <HikeDetail hike={this.state.hikes[this.state.selectedHikeIndex]} />
+                    <HikeDetail hike={this.state.hikes[this.state.selectedHikeIndex]} />
                 </div>
             )
         } else {
@@ -39,24 +31,39 @@ class Landing extends Component {
     }
 
     handleShowDetails(hikeIndex) {
+        // The current problem with this architecture is that when they click a hike, a new request needs to be made to get the latest info. Or every time a Comment is posted on a hike, the hikes in state need to be updated.
+        this.getLatestHikes();
         console.log(`handleShowDetails running with index %o`, hikeIndex);
         this.setState({showDetails: true, selectedHikeIndex: hikeIndex});
     }
 
-    async componentDidMount() {
 
-
+    async getLatestHikes() {
         try {
             // let response = await axios.get('/api/hikes/all'); /* This only uses hardcoded test data */
             let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
             this.setState({ hikes: response.data });
-            console.log(`API RESULT state.hikes = %o`, response.data);
-
-
-            console.log('API :point_right: Returned data:', response.data);
+            console.log('getLatestHikes API :point_right: Returned data:', response.data);
         } catch (e) {
-            console.log(`😱 Axios request failed: ${e}`);
+            console.log(`getLatestHikes 😱 Axios request failed: ${e}`);
         }
+    }
+
+    async componentDidMount() {
+
+        this.getLatestHikes();
+
+        //
+        // try {
+        //     let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+        //     this.setState({ hikes: response.data });
+        //     console.log(`API RESULT state.hikes = %o`, response.data);
+        //
+        //
+        //     console.log('API :point_right: Returned data:', response.data);
+        // } catch (e) {
+        //     console.log(`😱 Axios request failed: ${e}`);
+        // }
 
 
     }
@@ -106,7 +113,7 @@ class Landing extends Component {
                             {
                                 this.state.hikes.map((eachHike, i) => {
                                     return (
-                                        <Hikec hike={eachHike} onShow={() => this.handleShowDetails(i) } id={i} />
+                                        <HikeCard hike={eachHike} onShow={() => this.handleShowDetails(i) } key={i} />
                                     );
                                 })
                             }
@@ -120,9 +127,6 @@ class Landing extends Component {
 
                     <div className="col-3 sideBar left-align">
                         <div>
-                            <p>Lorem ipsum</p>
-
-
                             {
                                 this.renderDetails()
                             }
