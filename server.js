@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const hikes = require("./routes/api/hikes");
 const tests = require("./routes/api/tests");
 const images = require("./routes/api/images");
+require("dotenv").config();
 
 
 const app = express();
@@ -24,10 +25,10 @@ const db = require("./config/keys").mongoURI;
 
 // Connect to Mongo
 mongoose.connect(
-        db, {
-            useNewUrlParser: true
-        }
-    )
+    db, {
+        useNewUrlParser: true
+    }
+)
     .then(() => console.log("Connected to MongoDB"))
     .catch(err => console.log(err));
 
@@ -40,8 +41,8 @@ require("./config/passport")(passport);
 // Routes
 app.use("/api/users", users);
 app.use("/api/hikes", hikes);
-app.use( "/api/tests", tests);
-app.use( "/api/images", images);
+app.use("/api/tests", tests);
+app.use("/api/images", images);
 
 // Open up public folder to serve images
 app.use(express.static('public'));
