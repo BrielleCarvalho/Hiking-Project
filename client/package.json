@@ -2,9 +2,11 @@
   "name": "client",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://pure-hamlet-13851.herokuapp.com/",
   "dependencies": {
     "axios": "^0.18.0",
     "classnames": "^2.2.6",
+    "http-proxy-middleware": "^0.19.1",
     "jQuery": "^1.7.4",
     "jquery": "^3.4.1",
     "jwt-decode": "^2.2.0",
@@ -14,7 +16,7 @@
     "react-scripts": "3.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "NODE_ENV=production node index.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
