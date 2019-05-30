@@ -99,8 +99,8 @@ class Landing extends Component {
                                                     <ul>
                                                         <li>Location: {hike.location}</li>
                                                         <li >Difficulty: {hike.difficulty}</li>
-                                                        <li >Length: {hike.length}</li>
-                                                        <li >Ascent: {hike.ascent}</li>
+                                                        <li >Length: {hike.length} miles</li>
+                                                        <li >Ascent: {hike.ascent} feet</li>
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
                                                     <br></br>

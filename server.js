@@ -44,7 +44,7 @@ app.use( "/api/tests", tests);
 app.use( "/api/images", images);
 
 // Open up public folder to serve images
-app.use(express.static('public'));
+app.use(express.static('client'));
 
 // Setup port to 5000 unless deployed to Heroku then use its port.
 const port = process.env.PORT || 5000;
