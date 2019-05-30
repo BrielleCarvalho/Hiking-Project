@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const passport = require("passport");
+const path =require("path");
 
 const users = require("./routes/api/users");
 const hikes = require("./routes/api/hikes");
@@ -44,9 +45,13 @@ app.use( "/api/tests", tests);
 app.use( "/api/images", images);
 
 // Open up public folder to serve images
-app.use(express.static('client'));
+app.use(express.static(path.join(__dirname,"client","build")))
 
 // Setup port to 5000 unless deployed to Heroku then use its port.
 const port = process.env.PORT || 5000;
+
+app.get("*",(req, res)=>{    
+    res.sendFile(path.join(__dirname,"client","build","index.html"
+});
 
 app.listen(port, () => console.log(`server.js is running on port ${port}.`));
