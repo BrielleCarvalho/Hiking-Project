@@ -4,9 +4,6 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-// Choose the port and start the server
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => console.log(`Mixing it up on port ${PORT}`));
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
