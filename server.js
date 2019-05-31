@@ -7,7 +7,7 @@ const users = require("./routes/api/users");
 const hikes = require("./routes/api/hikes");
 const tests = require("./routes/api/tests");
 const images = require("./routes/api/images");
-require("dotenv").config();
+// require("dotenv").config();
 
 
 const app = express();
