@@ -52,7 +52,7 @@ class Landing extends Component {
                             top: "120px", 
                             left: "28%", 
                             right: "28%", 
-                            color: "white" 
+                            color: "#f7f9fa" 
                         }}>Trail Guide <br /></h2>
                     <h4 className="center-align title-two" 
                         style={{ 
@@ -60,11 +60,13 @@ class Landing extends Component {
                             top: "200px", 
                             left: "28%", 
                             right: "28%", 
-                            color: "white" 
+                            color: "#f7f9fa" 
                         }}>Guiding you to the best trails in Austin</h4>
 
                 </div>
-                    <div style={{ backgroundColor: "#86897e", height: "10px", width:"100%" }}></div>
+                   
+                    <div style={{ backgroundColor: "#f7f9fa", height: "100px", width:"100%" }}></div>
+                
                 <div className="row" style={{ backgroundColor: "#bc9336", padding: "5px" }}>
 
 
@@ -97,8 +99,8 @@ class Landing extends Component {
                                                     <ul>
                                                         <li>Location: {hike.location}</li>
                                                         <li >Difficulty: {hike.difficulty}</li>
-                                                        <li >Length: {hike.length}</li>
-                                                        <li >Ascent: {hike.ascent}</li>
+                                                        <li >Length: {hike.length} miles</li>
+                                                        <li >Ascent: {hike.ascent} feet</li>
                                                         <li >Stars: {hike.stars}</li>
                                                     </ul>
                                                     <br></br>

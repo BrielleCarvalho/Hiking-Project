@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
-const trails = require("../../config/seedTrails");
+const trails = require("../../config/seedtrails2");
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
