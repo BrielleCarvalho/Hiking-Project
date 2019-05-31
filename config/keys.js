@@ -1,6 +1,6 @@
 module.exports = {
     // mongoURI: "mern-app-db"
-    mongoURI: "mongodb://localhost/mern-app-db",
+    mongoURI:process.env.MONGODB_URI || "mongodb://localhost/mern-app-db",
     secretOrKey: "secret",
 
     // Hiking Project API
