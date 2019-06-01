@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+import HikeCard from "./HikeCard.js";
+import HikeDetail from "./HikeDetail.js"
 import Form from './Form';
+
 
 
 class Landing extends Component {
@@ -8,27 +11,65 @@ class Landing extends Component {
     constructor(props) {
         super(props);
         // Don't call this.setState() here!
-        this.state = { hikes: [], test: [1, 2, 3] };
+        // this.state = { hikes: [], test: [1, 2, 3] };
+        this.state = { hikes: [], showDetails: false, selectedHikeIndex: 0 };
         console.log(`state = %o`, this.state);
         // this.handleClick = this.handleClick.bind(this);
     }
 
+    handleShowDetails(hikeIndex) {
+        // The current problem with this architecture is that when they click a hike, a new request needs to be made to get the latest info. Or every time a Comment is posted on a hike, the hikes in state need to be updated.
+        this.getLatestHikes();
+        console.log(`handleShowDetails running with index %o`, hikeIndex);
+        this.setState({showDetails: true, selectedHikeIndex: hikeIndex});
+    }
+
+    renderDetails() {
+        console.log(`In renderDetails this.state = %o`, this.state);
+
+        if(this.state.showDetails) {
+
+            return (
+                <div>
+                    <HikeDetail hike={this.state.hikes[this.state.selectedHikeIndex]} />
+                </div>
+            )
+        } else {
+            return <div></div>
+        }
+    }
+
+    async getLatestHikes() {
+        try {
+            // let response = await axios.get('/api/hikes/all'); /* This only uses hardcoded test data */
+            let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+            this.setState({ hikes: response.data });
+            console.log('getLatestHikes API :point_right: Returned data:', response.data);
+        } catch (e) {
+            console.log(`getLatestHikes 😱 Axios request failed: ${e}`);
+        }
+    }
+
     async componentDidMount() {
 
+        this.getLatestHikes();
 
-        try {
-            let response = await axios.get('/api/hikes/all');
-            this.setState({ hikes: response.data.hikes });
-            console.log(`API RESULT state.hikes = %o`, response.data.hikes);
-
-
-            console.log('API :point_right: Returned data:', response.data.hikes);
-        } catch (e) {
-            console.log(`😱 Axios request failed: ${e}`);
-        }
+        //
+        // try {
+        //     let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+        //     this.setState({ hikes: response.data });
+        //     console.log(`API RESULT state.hikes = %o`, response.data);
+        //
+        //
+        //     console.log('API :point_right: Returned data:', response.data);
+        // } catch (e) {
+        //     console.log(`😱 Axios request failed: ${e}`);
+        // }
 
 
     }
+
+
 
 
     render() {
@@ -77,46 +118,13 @@ class Landing extends Component {
 
 
 
-                            {this.state.hikes.map((hike, i) => {
-                                // console.log(hike)
-                                return (
-
-                                    <div key={hike.id} className="col s12 m5 l4">
-                                        <div className="card small">
-
-                                            <div className="card-image waves-effect waves-block waves-light">
-                                                <img className="activator" src={hike.imgMedium} alt=""/>
-                                            </div>
-
-                                            <div className="card-content">
-                                                <span className="card-title activator grey-text text-darken-4"> {hike.name}<br></br>
-                                                <i className="material-icons">more_vert</i></span>
-                                                   
-
-                                            </div>
-
-                                            <div className="card-reveal">
-                                                <span className="card-title grey-text text-darken-4">{hike.name}
-                                                <i className="material-icons right">close</i></span>
-                                                <div>
-                                                    <ul>
-                                                        <li>Location: {hike.location}</li>
-                                                        <li >Difficulty: {hike.difficulty}</li>
-                                                        <li >Length: {hike.length} miles</li>
-                                                        <li >Ascent: {hike.ascent} feet</li>
-                                                        <li >Stars: {hike.stars}</li>
-                                                    </ul>
-                                                    <br></br>
-                                                    <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                );
+                            {
+                                this.state.hikes.map((eachHike, i) => {
+                                    return (
+                                        <HikeCard hike={eachHike} onShow={() => this.handleShowDetails(i) } key={i} />
+                                    );
+                                })
                             }
-                            )}
 
                         </div>
 
@@ -125,11 +133,18 @@ class Landing extends Component {
 
 
 
-                    <div className="col-3 sideBar left-align">
+                    {/*<div className="col-3 sideBar left-align">*/}
+                    <div className="col m4 s12 sideBar left-align">
                         <div>
+
+                            {
+                                this.renderDetails()
+                            }
+
                     <div style={{height: "50px", width:"100%" }}></div>
 
                             <Form />
+
                         </div>
                     </div>
 
