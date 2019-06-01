@@ -29,12 +29,35 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                Test Form
+                <h2>LEAVE A COMMENT:</h2>
                 <form onSubmit={this.onSubmit}>
-                    Comment:
                     <br></br>
-                    <input type="text" name="comment" />
-                    <input type="submit" value="Submit" />
+                    {/* <input 
+                    style={{
+                        borderColor: "black",
+                        borderWidth: "5px",
+                        width: "300px",
+                        height: "500px",
+                        backgroundColor: "white"
+                    }}
+                    type="text" 
+                    name="comment" /> */}
+                    <textarea 
+                    style={{
+                        borderColor: "black",
+                        borderWidth: "5px",
+                        width: "300px",
+                        height: "500px",
+                        backgroundColor: "white"
+                    }}
+                    id="textarea2" 
+                    class="materialize-textarea" 
+                    data-length="500"></textarea>
+
+                    <input 
+                    style={{}}
+                    type="submit" 
+                    value="Submit" />
                 </form>
 
                 <h2>Image</h2>
@@ -42,7 +65,7 @@ class Form extends React.Component {
                 <form action="/api/images/upload" method="POST" encType="multipart/form-data">
                     <div className="custom-file mb-3">
                         <input type="file" name="file" id="file" className="custom-file-input"/>
-                        <label htmlFor="file" className="custom-file-label">Choose File</label>
+                        <label htmlFor="file" className="custom-file-label"></label>
                     </div>
                     <input type="submit" value="Submit" className="btn btn-primary btn-block"/>
                 </form>

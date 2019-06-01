@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import Form from './Form';
 
 
 class Landing extends Component {
@@ -65,13 +66,15 @@ class Landing extends Component {
 
                 </div>
                    
-                    <div style={{ backgroundColor: "#f7f9fa", height: "100px", width:"100%" }}></div>
+                    {/* <div style={{ backgroundColor: "#f7f9fa", height: "100px", width:"100%" }}></div> */}
                 
                 <div className="row" style={{ backgroundColor: "#bc9336", padding: "5px" }}>
 
 
                     <div className="col sm12 m8">
                         <div className="row">
+                    <div style={{height: "50px", width:"100%" }}></div>
+
 
 
                             {this.state.hikes.map((hike, i) => {
@@ -124,15 +127,9 @@ class Landing extends Component {
 
                     <div className="col-3 sideBar left-align">
                         <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nulla nisi, vitae interdum lacus lacinia et. Nulla facilisis quam lacinia risus accumsan congue. Integer pellentesque tincidunt eleifend. Praesent eget purus faucibus, auctor erat et, tincidunt eros. Phasellus eu tincidunt justo. Mauris ac euismod eros, ac molestie leo. Aenean orci libero, pulvinar eu tellus eu, dignissim malesuada dui. Sed at dui nec dolor convallis volutpat vel id leo. Nunc efficitur, nisl quis ultrices facilisis, nisl ligula dictum purus, eget ornare nunc eros ac nibh. Ut bibendum, tortor vitae tincidunt vulputate, ex tortor mattis eros, eget dictum ligula ligula nec orci. Vivamus rutrum, eros et cursus blandit, augue ligula imperdiet justo, nec sagittis mauris eros sit amet diam. In suscipit sagittis nisl, viverra ullamcorper metus sagittis vitae. Nam tincidunt orci sed risus aliquam molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <div style={{height: "50px", width:"100%" }}></div>
 
-                            Aliquam erat volutpat. Sed sem nulla, rhoncus at tempor non, aliquet at est. Etiam ornare quis quam tempor interdum. Integer feugiat finibus mi, sed finibus justo commodo sit amet. Donec ut nibh semper, facilisis lorem sit amet, faucibus tortor. Proin consectetur augue sed tortor elementum, nec hendrerit lacus tincidunt. Sed ac dignissim lectus, at feugiat ex. Curabitur dictum egestas dictum. Donec vehicula fermentum dui. Nulla finibus ut tortor sit amet mattis. Proin placerat nulla euismod, tempus metus eget, ullamcorper lorem.
-
-                            Phasellus lacinia commodo erat, sit amet hendrerit lacus lobortis ac. Maecenas dapibus egestas mattis. Sed fermentum, arcu ut semper ullamcorper, ex mi semper justo, eu pretium augue ligula a sapien. Nullam vulputate pulvinar facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam egestas imperdiet feugiat. Aenean sit amet consectetur ipsum. Duis ullamcorper purus quis lorem congue aliquam.
-
-                            Curabitur porttitor nunc vel nisi suscipit, eget consequat eros malesuada. Vestibulum sagittis enim tellus, vitae semper metus ullamcorper eget. Maecenas accumsan dui a lacus condimentum, mollis congue lorem varius. Nulla nec consequat nibh. Etiam consequat, libero nec scelerisque pharetra, turpis nunc efficitur ipsum, rutrum imperdiet lacus lorem sodales est. Sed nec nisi ultricies, sagittis mauris sed, porta dui. Fusce eu pellentesque est. Vivamus quis maximus massa. Aenean eget dapibus mauris. Praesent convallis porttitor tempor. Aliquam vitae turpis mattis, dapibus orci at, hendrerit diam.
-
-                            Morbi sagittis massa et orci porta luctus. Vestibulum ac efficitur lorem. Duis vulputate dignissim maximus. Maecenas dignissim eros felis, non semper metus pharetra a. Vivamus fermentum velit sapien, at volutpat libero commodo quis. Maecenas egestas mi ac neque suscipit elementum. Pellentesque magna nunc, porttitor et ultrices id, tempor ut velit. Proin congue nisi ac blandit fringilla.</p>
+                            <Form />
                         </div>
                     </div>
 
