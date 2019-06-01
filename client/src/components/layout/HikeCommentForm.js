@@ -10,7 +10,7 @@ class HikeCommentForm extends React.Component {
         // Don't call this.setState() here!
         this.state = {
             comment: "",
-            hikeId: this.props.hikeId
+            // hikeId: this.props.hikeId
         };
         console.log(`Hike Form constructor this.state = %o`,this.state);
         this.handleCommentChange = this.handleCommentChange.bind(this);
@@ -27,7 +27,7 @@ class HikeCommentForm extends React.Component {
         console.log("sanity test");
         e.preventDefault();
         const commentData = {
-            hikeId: this.state.hikeId,
+            hikeId: this.props.hikeId,
             comment: this.state.comment
         };
         // {
@@ -56,10 +56,14 @@ class HikeCommentForm extends React.Component {
                 {/*    <input type="text" name="comment" />*/}
                 {/*    <input type="submit" value="Submit" />*/}
                 {/*</form>*/}
-                <div className="row">
-                    <form className="col s12" onSubmit={this.onSubmit}>
-                        <div className="row">
+                {/*<div className="row">*/}
+                {/*    <form className="col s12" onSubmit={this.onSubmit}>*/}
+                    <form className="" onSubmit={this.onSubmit}>
+                        <div className="">
+                        {/*<div className="row">*/}
+                            <p>Submit Comment for Hike ID: {this.props.hikeId}</p>
                             <div style={{"backgroundColor": "white"}} className="input-field col s12">
+
                                 <input placeholder="Comment..." id="comment" type="text" className="validate" onChange={this.handleCommentChange}/>
                                 <label htmlFor="first_name">Comment</label>
                             </div>
@@ -73,7 +77,8 @@ class HikeCommentForm extends React.Component {
                             </button>
                         </div>
                     </form>
-                </div>
+                {/*</div>*/}
+
             </div>
         );
     }
