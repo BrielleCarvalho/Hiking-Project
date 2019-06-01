@@ -129,7 +129,8 @@ class Landing extends Component {
 
 
 
-                    <div className="col-3 sideBar left-align">
+                    {/*<div className="col-3 sideBar left-align">*/}
+                    <div className="col m4 s12 sideBar left-align">
                         <div>
                             {
                                 this.renderDetails()
