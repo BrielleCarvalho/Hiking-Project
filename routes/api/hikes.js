@@ -75,7 +75,7 @@ router.post("/", (req, res) => {
 router.post("/comment", (req, res) => {
 
         // Find one by Id, Then do an update
-        Hike.findOneAndUpdate({_id: req.body.hikeId}, {$push: {comments: { "text": req.body.comment}}})
+        Hike.findOneAndUpdate({_id: req.body.hikeId}, { $push: { comments: { "text": req.body.comment } } }, { new: true } )
             .then(hike => res.json(hike))
             .catch(err => console.log(`Error in post comment api call: %o`, err));
 });
