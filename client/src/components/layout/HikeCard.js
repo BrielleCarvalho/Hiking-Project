@@ -46,6 +46,7 @@ class HikeCard extends Component {
                             </ul>
                             <br></br>
                             <a target="_blank" rel="noopener noreferrer" href={this.props.hike.url}>Find out more!</a>
+                            <br></br>
                             <button onClick={this.props.onShow}>Details</button>
                         </div>
                     </div>
