@@ -29,7 +29,7 @@ class Form extends React.Component {
     render() {
         return (
             <div>
-                <h2>LEAVE A COMMENT:</h2>
+                <h3>LEAVE A COMMENT:</h3>
                 <form onSubmit={this.onSubmit}>
                     <br></br>
                     {/* <input 
@@ -47,17 +47,21 @@ class Form extends React.Component {
                         borderColor: "black",
                         borderWidth: "5px",
                         width: "300px",
-                        height: "500px",
+                        height: "200px",
                         backgroundColor: "white"
                     }}
                     id="textarea2" 
                     class="materialize-textarea" 
                     data-length="500"></textarea>
 
+                    <br></br>
                     <input 
-                    style={{}}
+                    style={{
+                        borderRadius: "5px",
+                        backgroundColor: "#244441"
+                    }}
                     type="submit" 
-                    value="Submit" />
+                    value="SUBMIT" />
                 </form>
 
                 <h2>Image</h2>
@@ -67,7 +71,14 @@ class Form extends React.Component {
                         <input type="file" name="file" id="file" className="custom-file-input"/>
                         <label htmlFor="file" className="custom-file-label"></label>
                     </div>
-                    <input type="submit" value="Submit" className="btn btn-primary btn-block"/>
+                    <input 
+                    style={{
+                        borderRadius: "5px",
+                        backgroundColor: "#244441",
+                        Color: "white",
+                        border: "none"
+                    }}
+                    type="submit" value="Submit" className="btn btn-primary btn-block"/>
                 </form>
             </div>
         );

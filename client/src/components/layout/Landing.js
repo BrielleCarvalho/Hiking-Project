@@ -47,22 +47,22 @@ class Landing extends Component {
                         padding: "0px"
                     }}>
 
-                    <h2 className="center-align title-one" 
+                    <h1 className="center-align title-one" 
                         style={{
                             position: "absolute", 
                             top: "120px", 
                             left: "28%", 
                             right: "28%", 
                             color: "#f7f9fa" 
-                        }}>Trail Guide <br /></h2>
-                    <h4 className="center-align title-two" 
+                        }}>Trail Guide <br /></h1>
+                    <h3 className="center-align title-two" 
                         style={{ 
                             position: "absolute", 
                             top: "200px", 
                             left: "28%", 
                             right: "28%", 
                             color: "#f7f9fa" 
-                        }}>Guiding you to the best trails in Austin</h4>
+                        }}>Guiding you to the best trails in Austin</h3>
 
                 </div>
                    
