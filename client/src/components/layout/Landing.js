@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import axios from "axios";
 import HikeCard from "./HikeCard.js";
 import HikeDetail from "./HikeDetail.js"
+import Form from './Form';
+
 
 
 class Landing extends Component {
@@ -105,13 +107,15 @@ class Landing extends Component {
 
                 </div>
                    
-                    <div style={{ backgroundColor: "#f7f9fa", height: "100px", width:"100%" }}></div>
+                    {/* <div style={{ backgroundColor: "#f7f9fa", height: "100px", width:"100%" }}></div> */}
                 
                 <div className="row" style={{ backgroundColor: "#bc9336", padding: "5px" }}>
 
 
                     <div className="col sm12 m8">
                         <div className="row">
+                    <div style={{height: "50px", width:"100%" }}></div>
+
 
 
                             {
@@ -132,9 +136,15 @@ class Landing extends Component {
                     {/*<div className="col-3 sideBar left-align">*/}
                     <div className="col m4 s12 sideBar left-align">
                         <div>
+
                             {
                                 this.renderDetails()
                             }
+
+                    <div style={{height: "50px", width:"100%" }}></div>
+
+                            <Form />
+
                         </div>
                     </div>
 
