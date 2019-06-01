@@ -18,7 +18,7 @@ class HikeCommentForm extends React.Component {
     }
 
     handleCommentChange(event) {
-        console.log(`in handleCommentChange with event = %o`,event)
+        // console.log(`in handleCommentChange with event = %o`,event)
         this.setState({comment: event.target.value})
     }
 
@@ -38,6 +38,7 @@ class HikeCommentForm extends React.Component {
         try {
             const response = await axios.post('/api/hikes/comment', commentData);
             console.log(':point_right: Returned data:', response);
+            this.props.onNew(response.data);
 
             // You should probably use a callback to the parent function to update the comments, or maybe this functionality should be lifted up the HikeDetail level ( the api s
 
@@ -61,10 +62,11 @@ class HikeCommentForm extends React.Component {
                     <form className="" onSubmit={this.onSubmit}>
                         <div className="">
                         {/*<div className="row">*/}
-                            <p>Submit Comment for Hike ID: {this.props.hikeId}</p>
+                            <p><b>Submit Comment for Hike ID:</b> {this.props.hikeId}</p>
                             <div style={{"backgroundColor": "white"}} className="input-field col s12">
 
-                                <input placeholder="Comment..." id="comment" type="text" className="validate" onChange={this.handleCommentChange}/>
+                                {/*<input placeholder="Comment..." id="comment" type="text" className="validate" onChange={this.handleCommentChange}/>*/}
+                                <input placeholder="" id="comment" type="text" className="validate" onChange={this.handleCommentChange}/>
                                 <label htmlFor="first_name">Comment</label>
                             </div>
                             {/*<div className="input-field col s3">*/}

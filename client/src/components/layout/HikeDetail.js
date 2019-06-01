@@ -7,17 +7,22 @@ class HikeDetail extends Component {
 
     constructor(props) {
         super(props);
-        this.state = { hike:{} };
-
+        this.state = { hike: this.props.hike };
     }
 
     componentDidMount() {
-        console.log(`HikeDetail state = %o`, this.state);
-        console.log(`HikeDetail this.props = %o`, this.props);
+        console.log(`HikeDetail component did mount state = %o`, this.state);
+        console.log(`HikeDetail component did mount this.props = %o`, this.props);
     }
+
+    onNewComment = function(hike) {
+        console.log(`in HikeDetail onNewComment hike = %o`, hike);
+        this.setState({hike: hike});
+    }.bind(this);
 
 
     render() {
+        console.log(`rendering HikeDetail`);
         return (
             <div>
                 <h3>{this.props.hike.name}</h3>
