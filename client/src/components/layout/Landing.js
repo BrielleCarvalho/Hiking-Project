@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
+import HikeCard from "./HikeCard.js";
+import HikeDetail from "./HikeDetail.js"
 
 
 class Landing extends Component {
@@ -7,27 +9,65 @@ class Landing extends Component {
     constructor(props) {
         super(props);
         // Don't call this.setState() here!
-        this.state = { hikes: [], test: [1, 2, 3] };
+        // this.state = { hikes: [], test: [1, 2, 3] };
+        this.state = { hikes: [], showDetails: false, selectedHikeIndex: 0 };
         console.log(`state = %o`, this.state);
         // this.handleClick = this.handleClick.bind(this);
     }
 
+    handleShowDetails(hikeIndex) {
+        // The current problem with this architecture is that when they click a hike, a new request needs to be made to get the latest info. Or every time a Comment is posted on a hike, the hikes in state need to be updated.
+        this.getLatestHikes();
+        console.log(`handleShowDetails running with index %o`, hikeIndex);
+        this.setState({showDetails: true, selectedHikeIndex: hikeIndex});
+    }
+
+    renderDetails() {
+        console.log(`In renderDetails this.state = %o`, this.state);
+
+        if(this.state.showDetails) {
+
+            return (
+                <div>
+                    <HikeDetail hike={this.state.hikes[this.state.selectedHikeIndex]} />
+                </div>
+            )
+        } else {
+            return <div></div>
+        }
+    }
+
+    async getLatestHikes() {
+        try {
+            // let response = await axios.get('/api/hikes/all'); /* This only uses hardcoded test data */
+            let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+            this.setState({ hikes: response.data });
+            console.log('getLatestHikes API :point_right: Returned data:', response.data);
+        } catch (e) {
+            console.log(`getLatestHikes 😱 Axios request failed: ${e}`);
+        }
+    }
+
     async componentDidMount() {
 
+        this.getLatestHikes();
 
-        try {
-            let response = await axios.get('/api/hikes/all');
-            this.setState({ hikes: response.data.hikes });
-            console.log(`API RESULT state.hikes = %o`, response.data.hikes);
-
-
-            console.log('API :point_right: Returned data:', response.data.hikes);
-        } catch (e) {
-            console.log(`😱 Axios request failed: ${e}`);
-        }
+        //
+        // try {
+        //     let response = await axios.get('/api/hikes'); /* This uses real data from MongoDB */
+        //     this.setState({ hikes: response.data });
+        //     console.log(`API RESULT state.hikes = %o`, response.data);
+        //
+        //
+        //     console.log('API :point_right: Returned data:', response.data);
+        // } catch (e) {
+        //     console.log(`😱 Axios request failed: ${e}`);
+        // }
 
 
     }
+
+
 
 
     render() {
@@ -74,46 +114,13 @@ class Landing extends Component {
                         <div className="row">
 
 
-                            {this.state.hikes.map((hike, i) => {
-                                // console.log(hike)
-                                return (
-
-                                    <div key={hike.id} className="col s12 m5 l4">
-                                        <div className="card small">
-
-                                            <div className="card-image waves-effect waves-block waves-light">
-                                                <img className="activator" src={hike.imgMedium} alt=""/>
-                                            </div>
-
-                                            <div className="card-content">
-                                                <span className="card-title activator grey-text text-darken-4"> {hike.name}<br></br>
-                                                <i className="material-icons">more_vert</i></span>
-                                                   
-
-                                            </div>
-
-                                            <div className="card-reveal">
-                                                <span className="card-title grey-text text-darken-4">{hike.name}
-                                                <i className="material-icons right">close</i></span>
-                                                <div>
-                                                    <ul>
-                                                        <li>Location: {hike.location}</li>
-                                                        <li >Difficulty: {hike.difficulty}</li>
-                                                        <li >Length: {hike.length} miles</li>
-                                                        <li >Ascent: {hike.ascent} feet</li>
-                                                        <li >Stars: {hike.stars}</li>
-                                                    </ul>
-                                                    <br></br>
-                                                    <a target="_blank" rel="noopener noreferrer" href={hike.url}>Find out more!</a>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                    </div>
-
-                                );
+                            {
+                                this.state.hikes.map((eachHike, i) => {
+                                    return (
+                                        <HikeCard hike={eachHike} onShow={() => this.handleShowDetails(i) } key={i} />
+                                    );
+                                })
                             }
-                            )}
 
                         </div>
 
@@ -124,15 +131,9 @@ class Landing extends Component {
 
                     <div className="col-3 sideBar left-align">
                         <div>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque placerat nulla nisi, vitae interdum lacus lacinia et. Nulla facilisis quam lacinia risus accumsan congue. Integer pellentesque tincidunt eleifend. Praesent eget purus faucibus, auctor erat et, tincidunt eros. Phasellus eu tincidunt justo. Mauris ac euismod eros, ac molestie leo. Aenean orci libero, pulvinar eu tellus eu, dignissim malesuada dui. Sed at dui nec dolor convallis volutpat vel id leo. Nunc efficitur, nisl quis ultrices facilisis, nisl ligula dictum purus, eget ornare nunc eros ac nibh. Ut bibendum, tortor vitae tincidunt vulputate, ex tortor mattis eros, eget dictum ligula ligula nec orci. Vivamus rutrum, eros et cursus blandit, augue ligula imperdiet justo, nec sagittis mauris eros sit amet diam. In suscipit sagittis nisl, viverra ullamcorper metus sagittis vitae. Nam tincidunt orci sed risus aliquam molestie. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-                            Aliquam erat volutpat. Sed sem nulla, rhoncus at tempor non, aliquet at est. Etiam ornare quis quam tempor interdum. Integer feugiat finibus mi, sed finibus justo commodo sit amet. Donec ut nibh semper, facilisis lorem sit amet, faucibus tortor. Proin consectetur augue sed tortor elementum, nec hendrerit lacus tincidunt. Sed ac dignissim lectus, at feugiat ex. Curabitur dictum egestas dictum. Donec vehicula fermentum dui. Nulla finibus ut tortor sit amet mattis. Proin placerat nulla euismod, tempus metus eget, ullamcorper lorem.
-
-                            Phasellus lacinia commodo erat, sit amet hendrerit lacus lobortis ac. Maecenas dapibus egestas mattis. Sed fermentum, arcu ut semper ullamcorper, ex mi semper justo, eu pretium augue ligula a sapien. Nullam vulputate pulvinar facilisis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam egestas imperdiet feugiat. Aenean sit amet consectetur ipsum. Duis ullamcorper purus quis lorem congue aliquam.
-
-                            Curabitur porttitor nunc vel nisi suscipit, eget consequat eros malesuada. Vestibulum sagittis enim tellus, vitae semper metus ullamcorper eget. Maecenas accumsan dui a lacus condimentum, mollis congue lorem varius. Nulla nec consequat nibh. Etiam consequat, libero nec scelerisque pharetra, turpis nunc efficitur ipsum, rutrum imperdiet lacus lorem sodales est. Sed nec nisi ultricies, sagittis mauris sed, porta dui. Fusce eu pellentesque est. Vivamus quis maximus massa. Aenean eget dapibus mauris. Praesent convallis porttitor tempor. Aliquam vitae turpis mattis, dapibus orci at, hendrerit diam.
-
-                            Morbi sagittis massa et orci porta luctus. Vestibulum ac efficitur lorem. Duis vulputate dignissim maximus. Maecenas dignissim eros felis, non semper metus pharetra a. Vivamus fermentum velit sapien, at volutpat libero commodo quis. Maecenas egestas mi ac neque suscipit elementum. Pellentesque magna nunc, porttitor et ultrices id, tempor ut velit. Proin congue nisi ac blandit fringilla.</p>
+                            {
+                                this.renderDetails()
+                            }
                         </div>
                     </div>
 
