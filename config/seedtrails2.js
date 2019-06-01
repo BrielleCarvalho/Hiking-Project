@@ -12,8 +12,7 @@ const hikes = [
             "length": 5.6,
             "longitude": -97.352140,
             "latitude": 32.808000,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -29,8 +28,7 @@ const hikes = [
             "length": 1.2,
             "longitude": -97.762980,
             "latitude": 30.213130,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -46,8 +44,7 @@ const hikes = [
             "length": 5.8,
             "longitude": -97.886790,
             "latitude": 30.238070,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -63,8 +60,7 @@ const hikes = [
             "length": 2.8,
             "longitude": -97.840770,
             "latitude": 30.290710,
-            "pets": "Off Leash",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Off Leash",
     },
 
     {
@@ -80,8 +76,7 @@ const hikes = [
             "length": 10.5,
             "longitude": -95.746220,
             "latitude": 29.945720,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -97,8 +92,7 @@ const hikes = [
             "length": 5.0,
             "longitude": -97.762530,
             "latitude": 30.288850,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -114,8 +108,7 @@ const hikes = [
             "length": 7.8,
             "longitude": -97.870290,
             "latitude": 30.282600,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -131,8 +124,7 @@ const hikes = [
             "length": 3.4,
             "longitude": -97.796850,
             "latitude": 30.494380,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -148,8 +140,7 @@ const hikes = [
             "length": 8.0,
             "longitude": -97.944330,
             "latitude": 30.181840,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     },
 
     {
@@ -165,8 +156,7 @@ const hikes = [
             "length": 6.0,
             "longitude": -98.006360,
             "latitude": 30.360730,
-            "pets": "Yes Leashed",
-            "comments": ["This hike was so lovely, not a scooter in sight!" ]
+            "Pets": "Yes Leashed",
     }
 ];
 
